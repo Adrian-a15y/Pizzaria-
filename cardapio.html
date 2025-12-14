@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - Pizza do Chefe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+
+    <div class="logo">
+        <img src="https://i.ibb.co/ycP76wK8/IMG-20251011-WA0000.jpg" alt="Logo Pizza do Chefe">
+    </div>
+
+    <!-- Botão hamburguer -->
+    <div class="hamburger" onclick="toggleMenuMobile()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- MENU DESKTOP -->
+    <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="promocoes.html">Promoções</a>
+        <a href="historia.html">Nossa História</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <!-- MENU MOBILE (agora com ID) -->
+    <nav class="menu-mobile" id="menu-mobile">
+        <a href="index.html">Início</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="promocoes.html">Promoções</a>
+        <a href="historia.html">Nossa História</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+</header>
+
+<section class="secao-cardapio">
+
+    <div class="grid-pizzas">
+
+        <div class="pizza-item">
+            <img src="https://i.ibb.co/Txzfy8Gq/494feec171f5683665eba434d22e52f5.jpg">
+            <div class="pizza-info">
+                <h3>Clássica Margherita</h3>
+                <p>A tradicional que nunca sai de moda! Molho de tomate fresco, mussarela de búfala, tomate cereja e manjericão.</p>
+                <p><strong>P: R$ 35,00</strong></p>
+            </div>
+        </div>
+
+        <div class="pizza-item">
+            <img src="https://i.ibb.co/QvhTjwRt/images-4.jpg">
+            <div class="pizza-info">
+                <h3>Calabresa Gourmet</h3>
+                <p>Sabor marcante e irresistível! Calabresa artesanal fatiada, cebola roxa, azeitonas e mussarela derretida.</p>
+                <p><strong>P: R$ 38,00</strong></p>
+            </div>
+        </div>
+
+        <div class="pizza-item">
+            <img src="https://i.ibb.co/7xXRBqHc/images-5.jpg">
+            <div class="pizza-info">
+                <h3>Frango com Catupiry</h3>
+                <p>Frango desfiado, catupiry original e tempero especial.</p>
+                <p><strong>P: R$ 37,00</strong></p>
+            </div>
+        </div>
+
+        <div class="pizza-item">
+            <img src="https://revistamenu.com.br/wp-content/uploads/sites/24/2024/04/pizza-4-queijos-borda-lenha-divulgacao-easy-resizecom-1-1.jpg">
+            <div class="pizza-info">
+                <h3>Quatro queijos</h3>
+                <p>Mussarela, provolone, gorgonzola e parmesão ralado.</p>
+                <p><strong>P: R$ 39,00</strong></p>
+            </div>
+        </div>
+
+        <div class="pizza-item">
+            <img src="https://mmo.co.mz/wp-content/uploads/2024/09/Pizza-portuguesa-Receitas.webp">
+            <div class="pizza-info">
+                <h3>Portuguesa tradicional</h3>
+                <p>Molho artesanal, presunto, ovos, cebola, pimentão e azeitonas.</p>
+                <p><strong>P: R$ 38,00</strong></p>
+            </div>
+        </div>
+
+        <div class="pizza-item">
+            <img src="https://i.ibb.co/Z1fsKF1N/Gemini-Generated-Image-kbupu6kbupu6kbup.png">
+            <div class="pizza-info">
+                <h3>Especial da Casa</h3>
+                <p>Mussarela especial, presunto, calabresa e toque de orégano.</p>
+                <p><strong>P: R$ 40,00</strong></p>
+            </div>
+        </div>
+
+    </div>
+
+   <a href="#" class="botao-pedido" onclick="abrirFormulario()">Fazer pedido</a>
+
+</section>
+
+<div class="divisoria"></div>
+
+<section class="contato-info">
+    <p>📍 Rua das Pizzas, 123 - Centro, São Paulo - SP</p>
+    <p>📞 Telefone: (11) 3456-7890</p>
+    <p>💬 WhatsApp: (11) 98765-4321</p>
+    <p>✉️ Email: contato@pizzadochefe.com.br</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Pizza do Chefe - Todos os direitos reservados</p>
+</footer>
+
+    <div class="modal" id="modalPedido">
+    <div class="modal-conteudo">
+        <span class="fechar" onclick="fecharFormulario()">×</span>
+
+        <h2>Fazer Pedido</h2>
+        
+        <form>
+    <label>Nome</label>
+    <input type="text" required>
+
+    <label>Telefone</label>
+    <input type="tel" required>
+
+    <label>Endereço</label>
+    <input type="text" placeholder "Rua, número, bairro" required>
+            
+     <label>Forma de pagamento:</label>
+            <select class="modalPedido" required>
+                <option value="">Selecione...</option>
+                <option>Dinheiro físico</option>
+                <option>Cartão de credito</option>
+                <option>Cartão de débito</option>
+                <option>Pix</option>
+            </select>
+
+    <label>Pedido</label>
+    <textarea rows="4" placeholder="Ex: Pizza Calabresa grande..." required></textarea>
+
+    <button type="submit">Enviar Pedido</button>
+</form>
+
+    </div>
+</div>
+    
+<script>
+const btn = document.querySelector(".hamburger");
+const menuMobile = document.querySelector(".menu-mobile");
+
+btn.addEventListener("click", () => {
+    menuMobile.classList.toggle("active");
+});
+    
+    function abrirFormulario() {
+    document.getElementById("modalPedido").style.display = "flex";
+}
+
+function fecharFormulario() {
+    document.getElementById("modalPedido").style.display = "none";
+}
+</script>
+
+</body>
+</html>
